@@ -21,10 +21,12 @@ module.exports = (robot) ->
               item = items[i]
               beforePrice = item.price.in_stock
               specialPrice = caclulateSpecialPrice beforePrice
-              message = item.name + ' ' + item.price.in_stock + ' ' + specialPrice + ' ' +  item.url
+              message = item.url + ' ' + item.name + ' ' + item.price.in_stock + 'kr vilket är ' + specialPrice + 'kr '  
               res.send message
               i++
             
+            res.send ''
+            res.send 'Disclaimer: should probably only be used in a laid-back way and together w/ the right people. Also, any defects cannot not be blamed on the developers. :)'
             return
 
   caclulateSpecialPrice = (beforePrice) ->
